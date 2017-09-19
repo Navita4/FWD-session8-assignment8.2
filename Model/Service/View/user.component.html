@@ -1,0 +1,42 @@
+<section id="user">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-lg-offset-3">
+                <div class="form-wrap">
+                    <!-- This is userData submit form-->
+                    <h2>Add User</h2>
+                    <form>
+                        <div class="form-group">
+                            <label>FirstName</label>
+                            <input type="text" class="form-control" [(ngModel)]="currentUser.firstName"
+                            name="firstname" placeholder="FirstName" #first>
+                        </div>
+                        <br/>
+                        <button type="submit" class="btn btn-primary (click)="addUser()">Submit</button>
+                        <br/>
+                    </form>
+                </div>
+            </div>
+        <br/>
+        <br/>
+        <div class="row">
+            <div class="col-lg-6 col-lg-offset-3">
+                <!-- Show userList when it has records-->
+                <table *nfIf="userList.length>1" class="table table-bordered table-striped">
+                    <tr>
+                        <th>Index</th>
+                        <th>FirstName</th>
+                        <th>LastName</th>
+                    </tr>
+                    <!-- Looping through userlist-->
+                    <tr *ngFor="let user of userList; let i=index;">
+                        <td> {{i+1}}</td>
+                        <td>{{user.FirstName}}</td>
+                        <td>{{user.LastName}}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        </div>
+    </div>
+</section>
